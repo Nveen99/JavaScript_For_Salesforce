@@ -7,3 +7,9 @@
 4. You can even pause code execution at specific points to inspect variables and flow.
 
 */
+
+let myName = 'Naveen';
+//console.log(myName * 15); //NaN->Not a Number
+
+//console.log();
+//console.error();
