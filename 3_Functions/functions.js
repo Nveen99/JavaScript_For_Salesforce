@@ -77,3 +77,66 @@ const givenName = (name) => {
 };
 let finalMessage = givenName("Naveen");
 console.log("finalMessage:", finalMessage);
+
+
+
+
+
+
+console.log("Functions");
+
+let cal1result = calculation(10, 25);
+console.log(cal1result);
+
+// Function Declaration - calling function before declaration
+function calculation(number1, number2) {
+    let sum = number1 + number2;
+    return sum;
+}
+
+//function expression -- calling function before dectaration is not possible this is recommanded
+let calculation1 = function (number1, number2) {
+    //to resolve NaN for single parameter
+    if (number2) {
+        let sum = number1 + number2;
+        return sum;
+    } else {
+        return number1;
+    }
+};
+
+let cal2result = calculation1(10, 35);
+console.log(cal2result);
+
+let cal3result = calculation1(10);
+console.log(cal3result); //o/p is NAN--> to resolve we use If
+
+// Arrow functions
+let cal = (number1, number2) => {
+    //to resolve NaN for single parameter
+    if (number2) {
+        let sum = number1 + number2;
+        return sum;
+    } else {
+        return number1;
+    }
+};
+
+let cal4result = cal(10, 25);
+console.log(cal4result);
+
+// call back function
+function welCome(name, callMe) {
+    console.log(`Welcome, ${name}`);
+    callMe;
+}
+
+function greetMe() {
+    console.log("Welcome to India");
+}
+
+function bye() {
+    console.log("bye to India");
+}
+
+welCome("Naveen", greetMe());

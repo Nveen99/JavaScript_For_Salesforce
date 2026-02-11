@@ -114,3 +114,52 @@ userInfos.city = 'Hyderabad';
 
 // display updated object
 console.log('Updated User Info:', userInfos);
+
+
+
+console.log("Object Learning Js");
+
+let empObj = {
+    fName: "Aadhaya",
+    lName: "Thumoji",
+    skills: ["Admin", "Apex", "LWC", "Snowflake", "SQL", "Splunk"],
+};
+
+console.log("Employee details::", empObj);
+console.log("Employee details::", typeof empObj);
+
+//add any filds to object 1. dot(.) 2.[] square bracket
+
+//uding dot(.)
+empObj.age = 32;
+console.log("Employee details::", empObj);
+console.log("Employee details::", typeof empObj);
+
+//empObje.City Name='Hyderabad' // It will throw Errror
+
+//using []
+myCountry = "Country";
+empObj[myCountry] = "India";
+console.log("Employee details::", empObj);
+console.log("Employee details::", typeof empObj);
+
+empObj["City Name"] = "Hyderabad";
+console.log("Employee details::", empObj);
+console.log("Employee details::", typeof empObj); //object
+
+//json.stringify --> Object to String
+objConversion = JSON.stringify(empObj);
+console.log("Employee Obj to string::", objConversion);
+console.log("Employee conversion data type::", typeof objConversion);
+
+//json.parse -->String to Object
+strConversion = JSON.parse(objConversion);
+console.log("Employee Obj to string::", strConversion);
+console.log("Employee conversion data type::", typeof strConversion);
+
+//access value form Object using .dot and  []
+let empName = empObj.fName;
+console.log(empName);
+
+let cityName = empObj["City Name"];
+console.log(cityName);

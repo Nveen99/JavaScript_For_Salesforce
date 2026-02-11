@@ -103,3 +103,40 @@ function handleClick() {
     buttonCheck.removeEventListener('click', handleClick);
 }
 buttonCheck.addEventListener('click', handleClick);
+
+
+
+
+
+
+
+console.log("Custom Events");
+
+/*
+for Custom event creation we need to follow 3 steps
+1. create custom event
+2. dispatchCustomEvent
+3. listen/ handling the event
+*/
+document.addEventListener("eventcs", (event) => {
+    console.log("Access data", event.detail.message);
+});
+
+function ChangeHandler(event) {
+    //  console.log(event.target.value);
+    let value = event.target.value;
+
+    // when ever user enters 10 fire custom event
+    if (value == 10) {
+        // 1. create custom event
+        let myCustEvent = new CustomEvent("eventcs", {
+            detail: {
+                name: "Naveen Thumoji",
+                message: "This is my first custom event",
+                designation: "Associate Consultant",
+            },
+        });
+        //2. dispatchCustomEvent
+        document.dispatchEvent(myCustEvent);
+    }
+}

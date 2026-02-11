@@ -23,9 +23,9 @@ console.log('added new player:', arrayNewPlayers);
 
 
 // Expanding string
-let myName = 'Naveen Kumar';
-console.log(myName); //Naveen Kumar
-console.log('My Name expansion:', ...myName); //o/p-->N a v e e n   K u m a r
+let myName1 = 'Naveen Kumar';
+console.log(myName1); //Naveen Kumar
+console.log('My Name expansion:', ...myName1); //o/p-->N a v e e n   K u m a r
 
 
 //combine object
@@ -105,3 +105,76 @@ let employee = {
 // Create a new object and overwrite one property
 let updatedEmployee = { ...employee, role: 'Salesforce Developer', experience: 3 };
 console.log('Updated role and Experience:', updatedEmployee);
+
+
+
+
+
+
+
+console.log("Spread operaters");
+
+/* Spread Operaters [...]
+1. Expanding String
+2. Comning Arrays
+3. Combining Objects
+4. Shallow copy of Arrays and Objects
+*/
+
+// 1. Expanding String
+let myName = "My Name is thumoji naveen kumar";
+console.log("myName-->", ...myName);
+
+//2. Comning Arrays
+let array1 = [1, 2, 3, 4];
+let array2 = [5, 6, 7, 8, 9];
+let combinedArrays = [...array1, ...array2];
+console.log("combinedArrays", combinedArrays);
+
+addcombinedArrays = [25, 22, 15, ...combinedArrays];
+console.log(addcombinedArrays);
+
+addcombinedArrays2 = [...combinedArrays, 100, 101, 102];
+console.log(addcombinedArrays2);
+
+//3. Combining Objects
+let stdDetails1 = { fname: "Naveen", courses: ["Admin", "Apex", "LWC"] };
+let stddetails2 = { lname: "Kumar", age: 32 };
+let comninedObje = { ...stdDetails1, ...stddetails2 };
+console.log(comninedObje);
+
+//4. Shallow copy of Arrays and Objects
+let frtOrrayOriginal = ["Apple", "Mango", "Cherry"];
+let frtOrrayCopy = frtOrrayOriginal; // without spread operator
+console.log("Original fruits", frtOrrayOriginal);
+console.log("Copy fruits", frtOrrayCopy);
+frtOrrayCopy.push("Banana");
+console.log("Copy fruits", frtOrrayCopy);
+console.log("Original fruits", frtOrrayOriginal); // deep Copy we added banana to copy array it added to original
+
+let frtArrayOriginal = ["Apple", "Mango", "Cherry"];
+let frtArrayCopy = [...frtOrrayOriginal]; //used spread Shallow copy it copies to Copy only
+console.log("Original fruits", frtArrayOriginal);
+console.log("Copy fruits", frtArrayCopy);
+frtArrayCopy.push("Banana");
+console.log("Copy fruits", frtArrayCopy);
+console.log("Original fruits", frtArrayOriginal);
+
+//array copying
+let stdDetails3 = { fname: "Naveen", courses: ["Admin", "Apex", "LWC"] };
+let stdDetailsCopy = stdDetails3;
+console.log("stdDetails3", stdDetails3);
+console.log("stdDetailsCopy", stdDetailsCopy);
+
+stdDetailsCopy.age = 32;
+console.log("Copy stdDetailsCopy", stdDetailsCopy);
+console.log("Original stdDetails3", stdDetails3); // deep Copy we added age to copy object it added to original
+
+let stdDetails4 = { fname: "Naveen", courses: ["Admin", "Apex", "LWC"] };
+let stdDetailsCopy1 = { ...stdDetails4 }; // used spread added to copy details only
+console.log("stdDetails3", stdDetails4);
+console.log("stdDetailsCopy", stdDetailsCopy1);
+
+stdDetailsCopy1.age = 32;
+console.log("Copy stdDetailsCopy", stdDetailsCopy1);
+console.log("Original stdDetails3", stdDetails4);
